@@ -50,13 +50,14 @@ nav ul li a { font-size: 12px; color: var(--medium); text-decoration: none; tran
 nav ul li a:hover { color: var(--primary); }
 
 section {
-  min-height: 100vh;
-  padding: 80px 40px 60px;
+  min-height: auto;
+  padding: var(--section-py) var(--section-px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: calc(var(--section-py) + 60px);
 }
 
 .sec-header { margin-bottom: 28px; }
@@ -88,7 +89,7 @@ section {
 .cover-right { position: absolute; right: 40px; top: 70px; z-index: 1; text-align: right; }
 .cover-right p { font-size: 11px; color: var(--warm-gray); letter-spacing: 3px; margin-bottom: 4px; }
 
-.cap-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.cap-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .cap-card { background: var(--white); border-radius: 12px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
 .cap-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
 .cap-card.c1::before { background: var(--primary); }
@@ -115,7 +116,8 @@ section {
 .cap-card.c2 .evidence { color: var(--sage-dark); }
 .cap-card.c3 .evidence { color: var(--gold); }
 
-.case-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.case-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+.case-left, .case-right { display: flex; flex-direction: column; }
 
 /* Video player */
 .video-player {
@@ -162,7 +164,7 @@ section {
 .result-bar p { color: white; font-size: 13px; font-weight: 700; }
 
 .steps { display: flex; flex-direction: column; gap: 8px; }
-.step-card { background: var(--white); border-radius: 10px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; position: relative; overflow: hidden; }
+.step-card { background: var(--white); border-radius: 10px; padding: 18px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; position: relative; overflow: hidden; }
 .step-card::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 4px; border-radius: 0 4px 4px 0; }
 .step-card.s1::before { background: var(--primary); }
 .step-card.s2::before { background: var(--sage-dark); }
@@ -182,7 +184,7 @@ section {
 .signal-card .sig-label { font-size: 10px; font-weight: 700; color: var(--secondary); letter-spacing: 1px; margin-bottom: 3px; }
 .signal-card p { font-size: 13px; font-weight: 700; color: white; }
 
-.method-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+.method-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 .method-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); padding: 22px; display: flex; flex-direction: column; }
 .method-card .video-player-sm { width: 100%; border-radius: 8px; overflow: hidden; background: #1a1a1a; margin-bottom: 14px; }
 .method-card .video-player-sm video { width: 100%; display: block; max-height: 180px; object-fit: contain; }
@@ -237,7 +239,7 @@ section {
 .principle-card.p2 .p-divider { background: var(--sage-dark); }
 .principle-card.p3 .p-divider { background: var(--gold); }
 .principle-card p { font-size: 12px; color: var(--medium); line-height: 1.6; }
-.bottom-quote { text-align: center; margin-top: 28px; font-size: 15px; font-weight: 700; color: var(--primary); }
+.bottom-quote { text-align: center; margin-top: 24px; font-size: 15px; font-weight: 700; color: var(--primary); }
 
 #end { background: var(--primary); color: white; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 40px; position: relative; }
 #end::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 20px; background: var(--secondary); }
@@ -286,14 +288,14 @@ section {
   .mag-left-top {
     flex: 1;
     background: #fff;
-    padding: 40px 32px 28px;
+    padding: 32px 28px 24px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   .mag-left-bottom {
     background: #6F2F26;
-    padding: 32px 32px 40px;
+    padding: 28px 28px 32px;
     color: #fff;
   }
   .mag-label {
@@ -305,7 +307,7 @@ section {
     margin-bottom: 28px;
   }
   .mag-title {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1.3;
     margin: 0 0 20px 0;
@@ -322,7 +324,7 @@ section {
     width: 32px;
     height: 2px;
     background: #6F2F26;
-    margin: 28px 0;
+    margin: 20px 0;
   }
   .mag-stats {
     display: flex;
@@ -347,7 +349,7 @@ section {
 
   .mag-right {
     background: #fff;
-    padding: 44px 52px;
+    padding: 36px 44px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -366,7 +368,7 @@ section {
     font-size: 28px;
     font-weight: 700;
     color: #1a1a1a;
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
     font-family: 'Songti SC', 'Noto Serif SC', 'SimSun', serif;
     line-height: 1.4;
   }
@@ -379,7 +381,7 @@ section {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    padding: 16px 0;
+    padding: 14px 0;
     border-bottom: 1px solid #f0f0f0;
   }
   .mag-step:first-child {
@@ -412,7 +414,7 @@ section {
   }
   .mag-boundary {
     margin-top: 36px;
-    padding: 22px 28px;
+    padding: 20px 24px;
     background: #faf6f4;
     border-left: 3px solid #6F2F26;
   }
@@ -492,6 +494,18 @@ section {
     line-height: 1.7;
     font-style: italic;
   }
+
+#ai, #end {
+  padding-top: calc(var(--section-py) + 60px);
+  padding-bottom: var(--section-py);
+}
+#ai .mag-layout, #end .mag-layout {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.case-left { gap: 12px; }
+.video-caption { margin: 0; }
 </style>
 </head>
 <body>
