@@ -525,6 +525,216 @@ body section#end {
   padding-left: 40px !important;
   padding-right: 40px !important;
 }
+
+/* === 极简杂志版式（覆盖原有样式） === */
+.mag-layout {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  min-height: auto;
+  background: #fff;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.mag-left {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-right: 1px solid #f0ebe3;
+}
+.mag-left-top {
+  flex: 1;
+  padding: 0 36px 32px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.mag-left-bottom {
+  padding: 32px 36px 0 0;
+  border-top: 1px solid #f0ebe3;
+}
+.mag-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.mag-title {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  line-height: 1.35;
+  color: #2c2c2c;
+  margin: 0;
+  font-weight: 500;
+}
+.mag-divider {
+  width: 36px;
+  height: 1px;
+  background: var(--primary);
+  margin: 24px 0;
+}
+.mag-sub {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.mag-stat-item {
+  margin-bottom: 24px;
+}
+.mag-stat-item:last-child {
+  margin-bottom: 0;
+}
+.mag-stat-num {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.mag-stat-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.5px;
+}
+.mag-right {
+  padding: 0 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.right-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.right-heading {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin: 0 0 28px 0;
+}
+.mag-steps {
+  display: flex;
+  flex-direction: column;
+}
+.mag-step {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0ebe3;
+}
+.mag-step:first-child {
+  padding-top: 0;
+}
+.mag-step:last-child {
+  border-bottom: none;
+}
+.mag-step-num {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--primary);
+  font-weight: 500;
+  flex-shrink: 0;
+  min-width: 28px;
+  opacity: 0.8;
+}
+.mag-step-content {
+  flex: 1;
+}
+.mag-step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 6px;
+}
+.mag-step-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.mag-boundary {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: #faf8f4;
+  border-left: 2px solid var(--primary);
+  border-radius: 0 4px 4px 0;
+}
+.boundary-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.boundary-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+/* 结尾页特殊样式 */
+.end-signature {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin-bottom: 6px;
+}
+.end-role {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 2px;
+}
+.end-evidence {
+  display: flex;
+  flex-direction: column;
+}
+.evidence-item {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0ebe3;
+}
+.evidence-item:first-child {
+  padding-top: 0;
+}
+.evidence-item:last-child {
+  border-bottom: none;
+}
+.evidence-num {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--primary);
+  font-weight: 500;
+  flex-shrink: 0;
+  min-width: 28px;
+  opacity: 0.8;
+}
+.evidence-content {
+  flex: 1;
+}
+.evidence-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 6px;
+}
+.evidence-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+/* #end背景改为白色 */
+body section#end {
+  background: #fff !important;
+  color: #2c2c2c !important;
+}
 </style>
 </head>
 <body>
@@ -780,105 +990,101 @@ body section#end {
         <div class="mag-label">METHOD</div>
         <h2 class="mag-title">AI内容<br>生产链路</h2>
         <div class="mag-divider"></div>
-        <p class="mag-sub">知道工具的边界，才能真正把工具用成提效链路</p>
+        <p class="mag-sub">从创意到成片的<br>四步生产链路</p>
       </div>
       <div class="mag-left-bottom">
-        <div class="mag-stats">
-          <div class="stat-item">
-            <span class="stat-num">62.5%</span>
-            <span class="stat-text">产能提升</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">SOP</span>
-            <span class="stat-text">可复用链路</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">37人</span>
-            <span class="stat-text">带教规模</span>
-          </div>
+        <div class="mag-stat-item">
+          <div class="mag-stat-num">62.5%</div>
+          <div class="mag-stat-label">产能提升</div>
+        </div>
+        <div class="mag-stat-item">
+          <div class="mag-stat-num">SOP</div>
+          <div class="mag-stat-label">可复用流程</div>
+        </div>
+        <div class="mag-stat-item">
+          <div class="mag-stat-num">37</div>
+          <div class="mag-stat-label">带教人数</div>
         </div>
       </div>
     </div>
     <div class="mag-right">
-      <div class="right-section-title">PROCESS</div>
-      <h3 class="right-heading">从创意到成片的四步生产链路</h3>
+      <div class="right-label">PROCESS</div>
+      <h3 class="right-heading">四步生产链路</h3>
       <div class="mag-steps">
         <div class="mag-step">
-          <div class="ms-num">01</div>
-          <div class="ms-content">
-            <h4>创意策划</h4>
-            <p>选题定位 · 核心信息提炼 · 内容结构设计</p>
+          <div class="mag-step-num">01</div>
+          <div class="mag-step-content">
+            <div class="mag-step-title">创意策划</div>
+            <div class="mag-step-desc">明确业务目标与核心信息，确定内容方向与表达策略</div>
           </div>
         </div>
         <div class="mag-step">
-          <div class="ms-num">02</div>
-          <div class="ms-content">
-            <h4>AI辅助生成</h4>
-            <p>AI分镜图生成 · 初版素材生成 · 多版本快速迭代</p>
+          <div class="mag-step-num">02</div>
+          <div class="mag-step-content">
+            <div class="mag-step-title">AI辅助生成</div>
+            <div class="mag-step-desc">AI生成初始分镜图与素材，快速构建视觉初稿</div>
           </div>
         </div>
         <div class="mag-step">
-          <div class="ms-num">03</div>
-          <div class="ms-content">
-            <h4>人工终审</h4>
-            <p>信息准确性校验 · 品牌口径统一 · 细节质量把控</p>
+          <div class="mag-step-num">03</div>
+          <div class="mag-step-content">
+            <div class="mag-step-title">人工终审校准</div>
+            <div class="mag-step-desc">信息准确性与品牌口径人工审核，确保内容专业可靠</div>
           </div>
         </div>
         <div class="mag-step">
-          <div class="ms-num">04</div>
-          <div class="ms-content">
-            <h4>发布复盘</h4>
-            <p>发布策略执行 · 数据反馈收集 · 下一轮优化</p>
+          <div class="mag-step-num">04</div>
+          <div class="mag-step-content">
+            <div class="mag-step-title">发布复盘沉淀</div>
+            <div class="mag-step-desc">追踪发布效果，沉淀方法论，持续优化生产效率</div>
           </div>
         </div>
       </div>
       <div class="mag-boundary">
-        <h4>知道工具的边界</h4>
-        <p>AI用于分镜图与初版素材生成，信息准确性和品牌口径必须人工终审。</p>
-        <p>工具是提效的手段，判断是策划人的价值。</p>
+        <div class="boundary-title">知道工具的边界</div>
+        <div class="boundary-desc">AI用于分镜与素材生成，信息准确性与品牌口径必须人工终审</div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="end">
-  <div class="mag-layout end-layout">
+  <div class="mag-layout">
     <div class="mag-left">
       <div class="mag-left-top">
         <div class="mag-label">SUMMARY</div>
         <h2 class="mag-title">期待把这套<br>B端产品内容<br>的方法</h2>
         <div class="mag-divider"></div>
-        <p class="mag-sub">用在更硬核的产品传播上</p>
+        <p class="mag-sub">用在更硬核的<br>产品传播上</p>
       </div>
       <div class="mag-left-bottom">
-        <div class="end-sign">
-          <p>吕晓玲 · 产品内容策划</p>
-        </div>
+        <div class="end-signature">吕晓玲</div>
+        <div class="end-role">产品内容策划</div>
       </div>
     </div>
     <div class="mag-right">
-      <div class="right-section-title">EVIDENCE</div>
+      <div class="right-label">EVIDENCE</div>
       <h3 class="right-heading">三条证据链</h3>
       <div class="end-evidence">
-        <div class="ev-item">
-          <div class="ev-num">01</div>
-          <div class="ev-content">
-            <h4>欧派战略合作</h4>
-            <p>内容驱动行业级信任</p>
+        <div class="evidence-item">
+          <div class="evidence-num">01</div>
+          <div class="evidence-content">
+            <div class="evidence-title">内容驱动行业级战略合作</div>
+            <div class="evidence-desc">老板IP账号持续运营沉淀行业影响力，欧派7000+旗舰店全面导入鸿雁智能家居</div>
           </div>
         </div>
-        <div class="ev-item">
-          <div class="ev-num">02</div>
-          <div class="ev-content">
-            <h4>法宝系列转译</h4>
-            <p>主流产品场景化表达</p>
+        <div class="evidence-item">
+          <div class="evidence-num">02</div>
+          <div class="evidence-content">
+            <div class="evidence-title">主流产品的内容表达转译</div>
+            <div class="evidence-desc">把技术参数翻译成用户可感知的场景语言，让产品价值从功能走向体验</div>
           </div>
         </div>
-        <div class="ev-item">
-          <div class="ev-num">03</div>
-          <div class="ev-content">
-            <h4>AI生产链路</h4>
-            <p>提效62.5%，可复制SOP</p>
+        <div class="evidence-item">
+          <div class="evidence-num">03</div>
+          <div class="evidence-content">
+            <div class="evidence-title">AI提效的稳定生产链路</div>
+            <div class="evidence-desc">从创意到成片的标准化SOP，产能提升62.5%，带教37人可复制复用</div>
           </div>
         </div>
       </div>
