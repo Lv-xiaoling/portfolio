@@ -51,13 +51,13 @@ nav ul li a:hover { color: var(--primary); }
 
 section {
   min-height: auto;
-  padding: var(--section-py) var(--section-px);
+  padding: 80px var(--section-px) 56px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: calc(var(--section-py) + 60px);
+  scroll-margin-top: 60px;
 }
 
 .sec-header { margin-bottom: 28px; }
@@ -164,7 +164,7 @@ section {
 .result-bar p { color: white; font-size: 13px; font-weight: 700; }
 
 .steps { display: flex; flex-direction: column; gap: 8px; }
-.step-card { background: var(--white); border-radius: 10px; padding: 18px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; position: relative; overflow: hidden; }
+.step-card { background: var(--white); border-radius: 10px; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; gap: 14px; position: relative; overflow: hidden; }
 .step-card::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 4px; border-radius: 0 4px 4px 0; }
 .step-card.s1::before { background: var(--primary); }
 .step-card.s2::before { background: var(--sage-dark); }
@@ -241,7 +241,7 @@ section {
 .principle-card p { font-size: 12px; color: var(--medium); line-height: 1.6; }
 .bottom-quote { text-align: center; margin-top: 24px; font-size: 15px; font-weight: 700; color: var(--primary); }
 
-#end { background: var(--primary); color: white; text-align: center; min-height: auto; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 48px 40px; position: relative; }
+#end { background: var(--primary); color: white; text-align: center; min-height: auto; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 56px 40px; position: relative; }
 #end::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 20px; background: var(--secondary); }
 #end .end-line1 { font-size: 20px; color: var(--secondary); margin-bottom: 6px; }
 #end .end-line2 { font-size: 26px; font-weight: 700; margin-bottom: 44px; }
@@ -259,7 +259,7 @@ section {
   .cap-cards, .principle-cards, .ai-steps { grid-template-columns: 1fr; }
   .end-evidences { flex-direction: column; gap: 18px; }
   .end-evidences .ev::before { display: none; }
-  .cover-title { font-size: 30px; }
+  .cover-title { font-size: 34px; }
   .sec-title { font-size: 22px; }
   nav ul { display: none; }
   section { padding: 70px 20px 40px; }
@@ -288,14 +288,14 @@ section {
   .mag-left-top {
     flex: 1;
     background: #fff;
-    padding: 32px 28px 24px;
+    padding: 48px 36px 32px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
   .mag-left-bottom {
     background: #6F2F26;
-    padding: 28px 28px 32px;
+    padding: 36px 36px 48px;
     color: #fff;
   }
   .mag-label {
@@ -324,7 +324,7 @@ section {
     width: 32px;
     height: 2px;
     background: #6F2F26;
-    margin: 20px 0;
+    margin: 24px 0;
   }
   .mag-stats {
     display: flex;
@@ -349,7 +349,7 @@ section {
 
   .mag-right {
     background: #fff;
-    padding: 36px 44px;
+    padding: 48px 56px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -496,12 +496,13 @@ section {
   }
 
 #ai, #end {
-  padding-top: calc(var(--section-py) + 60px);
-  padding-bottom: var(--section-py);
+  padding-top: 80px;
+  padding-bottom: 56px;
 }
 #ai .mag-layout, #end .mag-layout {
   max-width: 1120px;
   margin: 0 auto;
+  min-height: auto;
 }
 
 .case-left { gap: 12px; }
