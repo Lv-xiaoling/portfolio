@@ -262,33 +262,205 @@ video { display: block; width: 100%; max-height: 520px; object-fit: contain; bac
 .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+/* ---------- 平板 / 大手机横屏 ---------- */
 @media (max-width: 920px) {
   .nav { align-items: flex-start; gap: 12px; padding-top: 14px; padding-bottom: 12px; }
   .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 10px 16px; }
   .hero, .section-head, .case, .ai-bottom { grid-template-columns: 1fr; }
-  .hero { min-height: auto; padding-top: 68px; }
+  .hero { min-height: auto; padding-top: 60px; }
   .hero::before { width: 100%; height: 42%; }
   .proof-strip, .cap-grid, .process, .metric-box { grid-template-columns: repeat(2, 1fr); }
+  .cap-card { min-height: 0; }
+  .section { padding: 60px clamp(20px, 4vw, 40px); }
 }
+
+/* ---------- 手机竖屏（核心优化） ---------- */
 @media (max-width: 640px) {
-  .nav { position: relative; }
-  .nav-links { justify-content: flex-start; font-size: 12px; }
-  .section { padding: 66px 20px; }
-  .hero { padding: 56px 20px 50px; }
-  .hero-actions, .detail-grid, .method-grid, .proof-strip, .cap-grid, .process, .metric-box, .final-grid { grid-template-columns: 1fr; }
-  .hero-actions { display: grid; }
-  .proof, .final-grid div, .metric-box div { border-right: 0; border-bottom: 1px solid var(--line); }
-  .final-grid div { border-bottom-color: rgba(255,255,255,0.16); }
-  .proof:last-child, .final-grid div:last-child, .metric-box div:last-child { border-bottom: 0; }
-  .hero-panel, .cap-card { padding: 22px; }
-  .detail { grid-template-columns: 1fr; gap: 5px; }
+  /* 导航 */
+  .nav {
+    position: sticky;
+    min-height: 56px;
+    padding: 10px 16px;
+    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .brand-mark span { font-size: 10px; }
+  .nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 14px;
+    font-size: 12px;
+    justify-content: flex-end;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; flex-shrink: 0; }
+
+  /* 通用区块 */
+  .section { padding: 48px 18px; }
+  .section[id] { scroll-margin-top: 58px; }
+  .section-head { gap: 14px; margin-bottom: 20px; }
+  .section-head h2 { font-size: 24px; }
+  .eyebrow { font-size: 11px; margin-bottom: 8px; }
+  .subcopy { font-size: 13px; line-height: 1.65; }
+
+  /* 首屏 Hero */
+  .hero {
+    padding: 44px 18px 36px;
+    gap: 28px;
+    min-height: auto;
+  }
+  .hero-kicker {
+    margin-bottom: 16px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .hero-kicker::before { width: 24px; }
+  h1 {
+    font-size: 38px;
+    margin-bottom: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 0;
+  }
+  .button {
+    min-height: 40px;
+    font-size: 13px;
+    padding: 0 14px;
+  }
+  .hero-panel {
+    padding: 20px 18px;
+    order: -1;
+  }
+  .position-title { font-size: 18px; margin-bottom: 12px; }
+  .position-list { gap: 12px; }
+  .position-list li { padding-top: 12px; }
+  .position-list strong { font-size: 14px; margin-bottom: 2px; }
+  .position-list span { font-size: 12.5px; }
+
+  /* 数据条 */
+  .proof-strip { grid-template-columns: repeat(2, 1fr); }
+  .proof { padding: 18px 16px; }
+  .proof strong { font-size: 20px; }
+  .proof span { font-size: 11.5px; margin-top: 4px; }
+  .proof:nth-child(odd) { border-right: 1px solid var(--line); }
+  .proof:nth-child(even) { border-right: 0; }
+  .proof:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+
+  /* 能力卡片 */
+  .cap-grid { grid-template-columns: 1fr; gap: 14px; }
+  .cap-card {
+    min-height: 0;
+    padding: 22px 20px 20px;
+  }
+  .cap-card .big-char { font-size: 36px; }
+  .cap-card h3 { font-size: 18px; margin: 12px 0 6px; }
+  .cap-card p { font-size: 13.5px; margin-bottom: 0; }
+  .cap-card ul { margin: 14px 0 0; padding-left: 16px; font-size: 13px; }
+  .cap-card li { margin: 5px 0; }
+
+  /* 案例区 */
+  .case { gap: 20px; }
+  video { max-height: 380px; }
+  .caption { font-size: 12px; margin-top: 8px; }
+  .case-summary { padding: 12px 14px; }
+  .case-summary p { font-size: 12.5px; }
+  .detail-grid { gap: 6px; }
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    min-height: 0;
+    padding: 12px 14px;
+  }
   .detail span, .detail h4, .detail p { grid-column: 1; grid-row: auto; }
-  .process-card { border-right: 0; border-bottom: 1px solid var(--line); }
-  .process-card:last-child { border-bottom: 0; }
-  .evidence-panel { margin-top: 22px; padding-top: 20px; }
-  .evidence-image { padding: 5px; }
-  .evidence-result { padding: 11px 12px; font-size: 12px; }
-  video { max-height: 440px; }
+  .detail h4 { font-size: 13px; }
+  .detail p { font-size: 12.5px; line-height: 1.6; }
+  .signal { padding: 12px 14px; }
+  .signal strong { font-size: 12.5px; }
+  .signal p { font-size: 12px; }
+  .evidence-panel { margin-top: 20px; padding-top: 18px; }
+  .evidence-label { font-size: 12px; margin-bottom: 10px; }
+  .evidence-image { padding: 6px; }
+  .evidence-result { padding: 10px 12px; font-size: 12px; }
+
+  /* 内容判断（方法卡） */
+  .method-grid { grid-template-columns: 1fr; gap: 14px; }
+  .note-card { padding: 18px; }
+  .note-card .media-frame { margin: -18px -18px 16px; }
+  .note-card video { height: 200px; }
+  .note-card .label { font-size: 11px; }
+  .note-card h3 { font-size: 17px; margin: 8px 0 6px; }
+  .note-card p { font-size: 13px; }
+  .note-card .judgement { margin: 14px 0 0; padding-top: 12px; font-size: 13px; }
+
+  /* AI 流程页 */
+  .process { grid-template-columns: repeat(2, 1fr); }
+  .process-card {
+    padding: 18px 16px 16px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .process-card:nth-child(even) { border-right: 0; }
+  .process-card:nth-last-child(-n+2) { border-bottom: 0; }
+  .process-card span { font-size: 11px; }
+  .process-card h4 { font-size: 14px; margin: 7px 0 5px; }
+  .process-card p { font-size: 12.5px; }
+  .ai-bottom { gap: 12px; margin-top: 14px; }
+  .metric-box { grid-template-columns: repeat(3, 1fr); }
+  .metric-box div { padding: 16px 12px; }
+  .metric-box strong { font-size: 20px; }
+  .metric-box span { font-size: 11px; margin-top: 6px; line-height: 1.4; }
+  .boundary { padding: 16px; }
+  .boundary h3 { font-size: 15px; margin-bottom: 6px; }
+  .boundary p { font-size: 12.5px; }
+
+  /* 结尾页 */
+  .final {
+    margin-top: 28px;
+    padding: 56px 20px 48px;
+  }
+  .final h2 { font-size: 24px; }
+  .final p { font-size: 13px; }
+  .final-grid {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+  .final-grid div {
+    padding: 16px 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.16);
+  }
+  .final-grid div:last-child { border-bottom: 0; }
+  .final-grid strong { font-size: 14px; }
+  .final-grid span { font-size: 12px; }
+}
+
+/* ---------- 小屏手机（iPhone SE 等） ---------- */
+@media (max-width: 380px) {
+  h1 { font-size: 32px; }
+  .lead { font-size: 15px; }
+  .hero { padding: 36px 16px 32px; gap: 22px; }
+  .section { padding: 40px 16px; }
+  .cap-card { padding: 18px 16px 16px; }
+  .cap-card .big-char { font-size: 32px; }
+  .hero-actions { grid-template-columns: 1fr; }
+  .proof strong { font-size: 18px; }
+  .metric-box div { padding: 14px 10px; }
+  .metric-box strong { font-size: 18px; }
+  .final h2 { font-size: 22px; }
 }
 </style>
 </head>
