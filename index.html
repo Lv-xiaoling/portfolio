@@ -507,6 +507,24 @@ section {
 
 .case-left { gap: 12px; }
 .video-caption { margin: 0; }
+
+/* === 修复section padding === */
+body section:not(#cover) {
+  padding-top: 80px !important;
+  padding-bottom: 56px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  min-height: auto !important;
+}
+body section#cover {
+  min-height: 100vh !important;
+  padding: 0 !important;
+}
+body section#ai,
+body section#end {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
 </style>
 </head>
 <body>
